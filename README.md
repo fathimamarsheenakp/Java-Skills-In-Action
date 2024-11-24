@@ -37,6 +37,4 @@ Feel free to explore, contribute, or learn alongside me!
 3. Run:
     ```bash
    java ProgramName
-
-   
    
