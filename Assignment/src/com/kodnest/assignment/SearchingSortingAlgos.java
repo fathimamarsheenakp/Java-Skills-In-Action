@@ -6,36 +6,45 @@ public class SearchingSortingAlgos {
 	static Scanner scanner = new Scanner(System.in);
 	
 	public void chooseSearchOrSort(int[] arr) {
-		System.out.println("Choose search or sort: \n 1. Press 1 for searching \n 2. Press 2 for sorting \n 3. Press 3 to exit");
-		int ch = scanner.nextInt();
-		
-		switch (ch) {
-		case 1 :
-			System.out.println("Choose Linear search or Binary Search \n a. Linear Search \n b. Binary Search");
-			char ch1 = scanner.next().charAt(0);
+		while (true) {
+			System.out.println("=================================================================");
+			System.out.println("Choose search or sort: \n 1. Press 1 for searching \n 2. Press 2 for sorting \n 3. Press 3 to exit");
+			int ch = scanner.nextInt();
 			
-			switch (ch1) {
-			case 'a' :
-				linearSearch(arr, getKey());
-				chooseSearchOrSort(arr);
+			switch (ch) {
+			case 1 :
+				System.out.println("Choose Linear search or Binary Search \n a. Linear Search \n b. Binary Search");
+				char ch1 = scanner.next().charAt(0);
+				System.out.println();
+				
+				switch (ch1) {
+				case 'a' :
+					linearSearch(arr, getKey());
+					System.out.println();
+					break;
+				case 'b': 
+					int[] sortedArr = chooseSorting(arr);
+					display(sortedArr);
+					System.out.println();
+					binarySearch(sortedArr, getKey());
+					System.out.println();
+					break;
+					
+				default: 
+					linearSearch(arr, getKey());
+					System.out.println();
+					break;
+				}
 				break;
-			case 'b': 
+			case 2 :
 				int[] sortedArr = chooseSorting(arr);
 				display(sortedArr);
-				binarySearch(sortedArr, getKey());
+				System.out.println();
 				break;
-				
 			default: 
-				linearSearch(arr, getKey());
-				break;
+				System.out.println("                       Thank You!");
+				System.exit(0);
 			}
-			break;
-		case 2 :
-			int[] sortedArr = chooseSorting(arr);
-			display(sortedArr);
-			break;
-		default: 
-			System.exit(0);
 		}
 	}
 	
@@ -45,15 +54,19 @@ public class SearchingSortingAlgos {
 		switch (ch2) {
 		case 'b':
 			bubbleSort(arr);
+			System.out.println();
 			break;
 		case 's':
 			selectionSort(arr);
+			System.out.println();
 			break;
 		case 'i':
 			insertionSort(arr);
+			System.out.println();
 			break;
 		default :
 			bubbleSort(arr);
+			System.out.println();
 		}
 		return arr;
 	}
