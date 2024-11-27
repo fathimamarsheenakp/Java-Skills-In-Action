@@ -1,9 +1,9 @@
-package com.kodnest.dsa.collections.priorityqueue;
+package com.kodnest.dsa.collections.queue;
 
 import java.util.PriorityQueue;
 import java.util.concurrent.PriorityBlockingQueue;
 
-public class Demo {
+public class PriQueue {
 
 	public static void main(String[] args) {
 		PriorityQueue priorityQueue = new PriorityQueue();

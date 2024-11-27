@@ -1,4 +1,4 @@
-package com.kodnest.dsa.collections.deque;
+package com.kodnest.dsa.collections.queue;
 
 import java.util.ArrayDeque;
 
