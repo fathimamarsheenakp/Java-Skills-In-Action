@@ -1,4 +1,4 @@
-package com.kodnest.dsa.collections.methods;
+package com.kodnest.dsa.collections.utilitymethods;
 
 import java.util.ArrayList;
 import java.util.Collections;
