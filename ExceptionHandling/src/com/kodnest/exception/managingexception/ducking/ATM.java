@@ -1,10 +1,10 @@
-package com.kodnest.exception.managingexception;
+package com.kodnest.exception.managingexception.ducking;
 
 import java.util.Scanner;
 
 public class ATM {
 
-	public void login() {
+	public void login() throws Exception{
 		System.out.println("Connection to DB Established");
 		System.out.println("Enter user id and password numbers to divide and login");
 		Scanner sc = new Scanner(System.in);
@@ -13,9 +13,8 @@ public class ATM {
 		try {
 			int c = a / b;
 			System.out.println("LOGGED IN!");
-		} catch (Exception e) {
-			System.out.println("Exception occured and resolved in ATM");
+		} finally {
+			System.out.println("Connection to DB Terminated");
 		}
-		System.out.println("Connection to DB Terminated");
 	}
 }

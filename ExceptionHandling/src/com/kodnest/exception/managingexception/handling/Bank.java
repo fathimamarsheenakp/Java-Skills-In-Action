@@ -1,4 +1,4 @@
-package com.kodnest.exception.managingexception;
+package com.kodnest.exception.managingexception.handling;
 
 public class Bank {
 
