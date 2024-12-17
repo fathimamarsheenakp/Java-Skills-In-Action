@@ -1,3 +1,4 @@
+package com.kodnest.looping;
 import java.util.Scanner;
 
 public class FactorialMethod {
