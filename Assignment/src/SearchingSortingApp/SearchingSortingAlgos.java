@@ -1,4 +1,4 @@
-package com.kodnest.assignment;
+package SearchingSortingApp;
 
 import java.util.Scanner;
 
