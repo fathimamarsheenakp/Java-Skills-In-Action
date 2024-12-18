@@ -1,8 +1,13 @@
 package com.kodnest.multithreading;
 
-public class Print extends Thread {
-
+public class Print2 extends Thread {
+	
+	@Override
 	public void run() {
+		print();
+	}
+
+	public void print() {
 		try {
 			System.out.println("PRINTING ACTIVITY STARTED");
 			for (int i = 0; i < 5; i++) {
