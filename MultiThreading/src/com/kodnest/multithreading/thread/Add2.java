@@ -1,4 +1,4 @@
-package com.kodnest.multithreading;
+package com.kodnest.multithreading.thread;
 
 public class Add2 extends Thread {
 	

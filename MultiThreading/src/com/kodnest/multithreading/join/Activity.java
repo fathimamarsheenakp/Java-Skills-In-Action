@@ -1,20 +1,20 @@
-package com.kodnest.multithreading;
+package com.kodnest.multithreading.join;
 
 import java.util.Scanner;
 
-public class Activity extends Thread {
-	
+public class Activity implements Runnable {
+
 	@Override
 	public void run() {
-		String name = Thread.currentThread().getName();
-		
-		if (name.equals("login")) {
-			login();
-		} else if (name.equals("print")) {
-			print();
-		} else {
-			add();
-		}
+	String name = Thread.currentThread().getName();
+			
+			if (name.equals("login")) {
+				login();
+			} else if (name.equals("print")) {
+				print();
+			} else {
+				add();
+			}
 	}
 
 	public void login() {
