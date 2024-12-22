@@ -16,19 +16,24 @@ public class RegularExpressionMatching {
     }
     
     public static boolean isMatch(String text, String pattern) {
+        
         // Base case: If the pattern is empty, the text must also be empty
         if (pattern.isEmpty()) {
             return text.isEmpty();
         }
 
+       
         // Check if the first character matches (considering '.')
         boolean firstMatch = !text.isEmpty() && 
                              (text.charAt(0) == pattern.charAt(0) || pattern.charAt(0) == '.');
+        
 
         // If the pattern contains '*', we have two cases to handle
         if (pattern.length() >= 2 && pattern.charAt(1) == '*') {
+        	
             // Case 1: Ignore the "x*" part in the pattern
             // Case 2: Consume one character from the text if the first character matches
+        	
             return (isMatch(text, pattern.substring(2)) || 
                    (firstMatch && isMatch(text.substring(1), pattern)));
         } else {
