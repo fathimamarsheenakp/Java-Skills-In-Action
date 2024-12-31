@@ -1,4 +1,4 @@
-package com.kodnest.multithreading.pcproblem;
+  package com.kodnest.multithreading.pcproblem;
 
 public class Producer extends Thread {
 
