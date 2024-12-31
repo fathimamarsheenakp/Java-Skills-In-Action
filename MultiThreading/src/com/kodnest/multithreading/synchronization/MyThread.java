@@ -1,6 +1,7 @@
 package com.kodnest.multithreading.synchronization;
 
 class MyThread extends Thread {
+	
     SharedResource resource;
     String message;
 

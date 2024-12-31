@@ -2,6 +2,7 @@ package com.kodnest.multithreading.synchronization;
 
 public class Demo {
     public static void main(String[] args) {
+    	
         SharedResource resource = new SharedResource();
         
         MyThread t1 = new MyThread(resource, "Hello");
