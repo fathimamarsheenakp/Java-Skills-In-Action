@@ -9,16 +9,22 @@ public class FileIOBuffer {
 
 	public static void main(String[] args) {
 		
+		FileReader fr = null;
+		FileWriter fw = null;
+		
+		BufferedReader br = null;
+		BufferedWriter bw = null;
+		
 		try {
 			
 			String path1 = "C:\\Users\\fathi\\OneDrive\\Desktop\\Kodnest\\Java\\File\\NewInput.txt";
 			String path2 = "C:\\Users\\fathi\\OneDrive\\Desktop\\Kodnest\\Java\\File\\NewOutput.txt";
 			
-			FileReader fr = new FileReader(path1);
-			FileWriter fw = new FileWriter(path2);
+			fr = new FileReader(path1);
+			fw = new FileWriter(path2);
 			
-			BufferedReader br = new BufferedReader(fr);
-			BufferedWriter bw = new BufferedWriter(fw);
+			br = new BufferedReader(fr);
+			bw = new BufferedWriter(fw);
 			
 			String x;
 			while ((x = br.readLine()) != null) {
@@ -29,6 +35,17 @@ public class FileIOBuffer {
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			try {
+				
+				fr.close();
+				fw.close();
+				br.close();
+				bw.close();
+				
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
 		}
 		
 		
