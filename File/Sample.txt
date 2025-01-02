@@ -1,0 +1,5 @@
+Hello, this is a sample text file.
+Each line of this file is a new sentence.
+This will help demonstrate the line breaks in the output.
+
+Thank you for reading!
