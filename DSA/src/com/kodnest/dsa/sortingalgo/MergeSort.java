@@ -22,37 +22,37 @@ public class MergeSort {
 		}
 	}
 	
-	public static void mergeSort(int[] arr, int left, int right) {
-		
-		if (left < right) {
-			int middle = (left + right) / 2;
+	public static void mergeSort(int[] arr, int low, int high) {
+		if (low < high) {
+			int mid = (low + high) / 2;
 			
-			mergeSort(arr, left, middle);
-			mergeSort(arr, middle + 1,  right);
+			mergeSort(arr, low, mid);
+			mergeSort(arr, mid + 1, high);
 			
-			merge(arr, left, middle, right);
+			merge(arr, low, mid, high);
+			
 		}
 	}
 	
-	public static void merge(int[] arr, int left, int middle, int right) {
-		
-		int n1 = middle - left + 1;
-		int n2 = right - middle;
+	public static void merge(int[] arr, int low, int mid, int high) {
+		int n1 = mid - low + 1;
+		int n2 = high - mid;
 		
 		int[] leftArray = new int[n1];
 		int[] rightArray = new int[n2];
 		
 		for (int i = 0; i < n1; i++) {
-			leftArray[i] = arr[left + i];
+			leftArray[i] = arr[low + i];
 		}
 		
-		for (int j = 0; j < n2; j++) {
-			rightArray[j] = arr[middle + 1 + j];
+		for (int i = 0; i < n2; i++) {
+			rightArray[i] = arr[mid + 1 + i];
 		}
 		
 		int i = 0;
 		int j = 0;
-		int k = left;
+		int k = low;
+		
 		while (i < n1 && j < n2) {
 			if (leftArray[i] <= rightArray[j]) {
 				arr[k] = leftArray[i];
@@ -73,7 +73,7 @@ public class MergeSort {
 		while (j < n2) {
 			arr[k] = rightArray[j];
 			j++;
-			k++; 
+			k++;
 		}
 	}
 }
