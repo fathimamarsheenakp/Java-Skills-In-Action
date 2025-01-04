@@ -34,16 +34,13 @@ public class BinarySearchTree {
 		System.out.println();
 		
 		System.out.println("Enter node to delete");
-		int data = sc.nextInt();
-		
-		bst.delete(data);
+		bst.delete(sc.nextInt());
 		System.out.println("After deletion");
 		bst.inorder();
 		System.out.println();
 		
 		System.out.println("Enter node to search");
-		int key = sc.nextInt();
-		if (bst.search(key)) {
+		if (bst.search(sc.nextInt())) {
 			System.out.println("Data found");
 		} else {
 			System.out.println("Data not found");
