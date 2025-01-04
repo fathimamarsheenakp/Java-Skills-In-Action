@@ -1,6 +1,5 @@
 package com.kodnest.dsa.implementations;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
@@ -31,13 +30,11 @@ public class BinaryTree {
 		System.out.println("Enter the number of nodes to be created: ");
 		int n = sc.nextInt();
 		
-		ArrayList<Integer> values = new ArrayList<Integer>();
 		System.out.println("Enter node values");
 		for (int i = 0; i < n; i++) {
-			values.add(sc.nextInt());
+			tree.insert(sc.nextInt());
 		}
 		
-		tree.insert(values);
 		System.out.println();
 		
 		System.out.println("Preorder traversal: ");
@@ -53,30 +50,33 @@ public class BinaryTree {
 		System.out.println();
 	}
 	
-	void insert(ArrayList<Integer> values) {
-		if (values == null || values.size() == 0) {
+	void insert(int data) {
+		Node newNode = new Node(data);
+		if (root == null) {
+			root = newNode;
 			return;
 		}
-		Queue<Node> queue = new LinkedList<BinaryTree.Node>();
 		
-		root = new Node(values.get(0));
+		Queue<Node> queue = new LinkedList<>();
 		queue.add(root);
 		
-		int i = 1;
-		while (i < values.size()) {
-			Node node = queue.poll();
+		while (!queue.isEmpty()) {
+			Node currNode = queue.poll();
 			
-			if (i < values.size()) {
-				node.left = new Node(values.get(i++));
-				queue.add(node.left);
+			if (currNode.left == null) {
+				currNode.left = newNode;
+				return;
+			} else {
+				queue.add(currNode.left);
 			}
-			 
-			if (i < values.size()) {
-				node.right = new Node(values.get(i++));
-				queue.add(node.right);
+			
+			if (currNode.right == null) {
+				currNode.right = newNode;
+				return;
+			} else {
+				queue.add(currNode.right);
 			}
 		}
-		
 	}
 	
 	void preorder(Node node) {
