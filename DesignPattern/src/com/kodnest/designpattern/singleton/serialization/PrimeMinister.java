@@ -1,9 +1,10 @@
-package com.kodnest.designpattern.serialization;
+package com.kodnest.designpattern.singleton.serialization;
 
 import java.io.Serializable;
 
 public class PrimeMinister implements Serializable {
-    private static PrimeMinister pm = null;
+	private static final long serialVersionUID = 1L;
+	private static PrimeMinister pm = null;
     String name = "Modi";
     int age = 75;
 

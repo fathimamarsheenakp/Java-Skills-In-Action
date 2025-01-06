@@ -1,4 +1,4 @@
-package com.kodnest.designpattern.serialization;
+package com.kodnest.designpattern.singleton.serialization;
 
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
