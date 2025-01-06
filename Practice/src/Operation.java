@@ -1,58 +1,74 @@
 
 public class Operation {
-	int[] queue = null;
+	int size;
+	int[] cQueue = null;
 	int front = -1;
 	int rear = -1;
 	
 	public Operation(int size) {
-		queue = new int[size];
-		System.out.println("queue of size " + size + " created successfully");
+		this.size = size;
+		cQueue = new int[size];
+		System.out.println("Circular queue of size " + size + " created successfully");
 	}
 	
-	public void enqueue(int element) {
-		if (queue == null) {
-			System.out.println("Create a queue first!");
+	boolean isFull() {
+		return front == (rear + 1) % size;
+	}
+	
+	boolean isEmpty() {
+		return front == -1;
+	}
+	
+	void enqueue(int data) {
+		if (isFull()) {
+			System.out.println("Circular queue is full");
 			return;
-		}
+		} 
+		
 		if (front == -1) {
 			front = 0;
 		}
-		if (rear == queue.length - 1) {
-			System.out.println("queue is full!");
+		
+		rear = (rear + 1) % size;
+		cQueue[rear] = data;
+	}
+	
+	void dequeue() {
+		if (isEmpty()) {
+			System.out.println("Circular queue is empty");
+			return;
+		} 
+		
+		if (front == rear) {
+			front = rear = -1;
 		} else {
-			++rear;
-			queue[rear] = element;
+			front = (front + 1) % size;
 		}
 	}
 	
-	public void dequeue() {
-		if (rear == -1 || front > rear) {
-			System.out.println("queue is empty!");
-		} else {
-			int ele = queue[front];
-			queue[front] = 0;
-			++front;
-			System.out.println("Element " + ele + " popped from the queue");
-		}
-	}
-	
-	public void peek() {
-		if (rear == -1 || front > rear) {
-			System.out.println("queue is empty!");
-		} else {
-			System.out.println("Peek Element is " + queue[front]);
-		}
-	}
-	
-	public void display() {
-		if (rear == -1 || front > rear) {
-			System.out.println("queue is empty!");
-		} else {
-			System.out.println("queue is: ");
-			for (int i = front; i <= rear; i++) {
-				System.out.print(queue[i] + " ");
+	void display() {
+		if (isEmpty()) {
+			System.out.println("Circular queue is empty");
+			return;
+		} 
+		
+		int i = front;
+		while (true) {
+			System.out.print(cQueue[i] + " ");
+			if (rear == i) {
+				break;
 			}
-			System.out.println();
+			
+			i = (i + 1) % size;
 		}
+	}
+	
+	void peek() {
+		if (isEmpty()) {
+			System.out.println("Circular queue is empty");
+			return;
+		} 
+		
+		System.out.println("Peek element is " + cQueue[front]);
 	}
 }
