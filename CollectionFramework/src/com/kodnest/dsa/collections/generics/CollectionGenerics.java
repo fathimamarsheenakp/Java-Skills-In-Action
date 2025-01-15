@@ -17,6 +17,5 @@ public class CollectionGenerics {
 		arrayList2.add(200);
 		arrayList2.add(300);
 		System.out.println(arrayList2);
-		
 	}  
 }

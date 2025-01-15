@@ -6,6 +6,7 @@ import java.util.concurrent.PriorityBlockingQueue;
 public class PriQueue {
 
 	public static void main(String[] args) {
+		
 		PriorityQueue priorityQueue = new PriorityQueue();
 		priorityQueue.add(100);
 		priorityQueue.add(50);
