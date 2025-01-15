@@ -10,5 +10,6 @@ public class check {
 		double n = scanner.nextDouble();
 		System.out.printf("%-15s%07.3f%n", str , n);
 //		System.out.printf("%-15s%03d%n", str, n);
+		scanner.close();
 	}
 }
