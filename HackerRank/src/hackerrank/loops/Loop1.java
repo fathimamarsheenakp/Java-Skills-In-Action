@@ -25,5 +25,7 @@ public class Loop1 {
 				}
 			}
 		}
+		
+		scanner.close();
 	}
 }
