@@ -1,4 +1,4 @@
-package com.kodnest.FirstHibernet;
+package com.kodnest.FirstHibernateProject;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
