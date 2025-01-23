@@ -101,5 +101,8 @@ public class Customer {
 		this.phone = phone;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return id + "  " + accno + "  " + name + "  " + address + "  " + email + "  " + phone;
+	}
 }
