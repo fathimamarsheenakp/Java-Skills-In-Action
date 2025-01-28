@@ -3,6 +3,11 @@ package com.kodnest.ManyToOneMapping;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
 public class App {
 	
     public static void main(String[] args) {
@@ -18,6 +23,12 @@ public class App {
     	list.add(e3);
     	department.setDeptlist(list);
     	
-    	
+    	SessionFactory factory = new Configuration().configure("com/kodnest/ManyToOneMapping/hibernate.cfg.xml").buildSessionFactory();
+    	Session session = factory.openSession();
+    	Transaction transaction = session.beginTransaction();
+    	session.persist(department);
+    	transaction.commit();
+    	session.close();
+    	factory.close();
     }
 }
