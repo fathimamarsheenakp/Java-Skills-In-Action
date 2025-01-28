@@ -92,6 +92,4 @@ public class Product {
 	public void setPimage(Productimage pimage) {
 		this.pimage = pimage;
 	}
-	
-	
 }

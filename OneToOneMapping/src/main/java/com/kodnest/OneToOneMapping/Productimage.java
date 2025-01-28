@@ -48,6 +48,4 @@ public class Productimage {
 	public void setImageurl(String imageurl) {
 		this.imageurl = imageurl;
 	}
-	
-	
 }
